@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    th, td {
+        @apply p-3;
+    }
+    td {
+        @apply border-t-2 overflow-hidden text-ellipsis;
+    }
+    tbody tr {
+        @apply border-b-2 hover:bg-gray-200;
+    }
+    .label {
+        @apply rounded p-[0.3rem] text-white font-semibold text-sm;
+    }
+    .draft {
+        @apply bg-[#777];
+    }
+    .live {
+        @apply bg-green-500;
+    }
+    .error {
+        @apply bg-red-500;
+    }
+}
