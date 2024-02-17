@@ -58,17 +58,17 @@ export const Modal = ({isOpen, setIsOpen, onSubmit}) => {
                     <form onSubmit={handleSubmit}>
                         <div className="flex flex-col mb-2">
                             <label className='mb-1' htmlFor="page">Page</label>
-                            <input className='border border-black rounded-md p-2 text-base' name="page" onChange={handleChange}/>
+                            <input id='page' className='border border-black rounded-md p-2 text-base' name="page" onChange={handleChange}/>
                         </div>
                         {invalid === "Page" && <p className='text-red-600 flex items-center'>Please fill in this field</p>}
                         <div className="flex flex-col mb-2">
                             <label htmlFor="description">Description</label>
-                            <textarea className='border border-black rounded-md p-2 text-base' name="description" onChange={handleChange}/>
+                            <textarea id='description' className='border border-black rounded-md p-2 text-base' name="description" onChange={handleChange}/>
                         </div>
                         {invalid === "Description" && <p className='text-red-500 flex items-center'>Please fill in this field</p>}
                         <div className="flex flex-col mb-4">
                             <label htmlFor="status">Status</label>
-                            <select className='border border-black rounded-md p-2 text-base' name="status" onChange={handleChange}>
+                            <select id='status' className='border border-black rounded-md p-2 text-base' name="status" onChange={handleChange}>
                                 <option value="live">Live</option>
                                 <option value="draft">Draft</option>
                                 <option value="error">Error</option>

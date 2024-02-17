@@ -13,9 +13,13 @@ const SlideInNotifications = ({notifications, setNotifications}) => {
   return (
     <div className="flex items-center justify-center">
       <div className=" flex flex-col gap-1 w-60 fixed top-2 right-1 z-50 pointer-events-none">
-        <AnimatePresence>
+      <AnimatePresence>
           {notifications.map((n) => (
-            <Notification removeNotif={removeNotif} {...n} key={n.id} />
+            <Notification
+              key={n.id}
+              removeNotif={removeNotif}
+              {...n}
+            />
           ))}
         </AnimatePresence>
       </div>

@@ -2,17 +2,18 @@ import React from 'react'
 import { BsFillTrashFill, BsPencilSquare } from 'react-icons/bs'
 import './Table.css'
 import { AnimatePresence, motion } from "framer-motion";
+import { TbTriangleInvertedFilled } from "react-icons/tb";
 
-const Table = ({rows, deleteRow, editRow}) => {
+const Table = ({rows, deleteRow, editRow, sorting, order, sortedCol}) => {
   return (
     <div className=' w-full'>
         <table className='block overflow-hidden table-fixed border-collapse shadow-lg shadow-slate-400 rounded-lg whitespace-nowrap w-[100em] max-w-[80%] m-auto overflow-x-auto'>
             <thead className=' bg-gray-500 text-black'>
                 <tr>
-                    <th>Page</th>
-                    <th className='w-full'>Description</th>
-                    <th>Status</th>
-                    <th>Actions</th>
+                    <th><div className='flex'>Page <TbTriangleInvertedFilled onClick={sorting('page')} className={`${order === 'asc' && sortedCol === 'page' && 'rotate-180'} scale-75 mt-1 ml-1 cursor-pointer ${sortedCol === 'page' && 'border-2 border-black border-spacing-4'}`} /></div> </th>
+                    <th className='w-full'><div className='flex'>Description <TbTriangleInvertedFilled onClick={sorting('description')} className={`${order === 'asc' && sortedCol === 'description' && 'rotate-180'} scale-75 mt-1 ml-1 cursor-pointer ${sortedCol === 'description' && 'border-2 border-black border-spacing-4'}`} /></div></th>
+                    <th><div className='flex'>Status <TbTriangleInvertedFilled onClick={sorting('status')} className={`${order === 'asc' && sortedCol === 'status' && 'rotate-180'} scale-75 mt-1 ml-1 cursor-pointer ${sortedCol === 'status' && 'border-2 border-black border-spacing-4'}`} /></div></th>
+                    <th><div className='flex'>Actions</div></th>
                 </tr>
             </thead>
             <tbody>
