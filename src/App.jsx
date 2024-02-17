@@ -172,7 +172,7 @@ function App() {
         setOrder(order === 'asc' ? 'desc' : 'asc');
     };
   };
-  // console.log(rows[0].id)
+  console.log(rows)
   
   return (
   <div className='flex flex-col items-center justify-center h-screen bg-slate-100'>
