@@ -88,6 +88,7 @@ const generateNotif = (text) => {
           console.log(err)
       })
   },[])
+  console.log(rows)
   
   return (
   <div className='flex flex-col items-center justify-center h-screen bg-slate-100'>
